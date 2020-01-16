@@ -5,6 +5,7 @@
  */
 package practicaOpcional01;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Ej18 {
@@ -14,7 +15,16 @@ public class Ej18 {
         int numero1 = lector.nextInt();
         System.out.println("Introduce otro número mayor que " + numero1 + ":");
         int numero2 = lector.nextInt();
-        //acabar
+        //decido meter los números en una lista
+        int[] listaNumeros = new int[10];
+        for (int i = 0; i < 10; i++) {
+            listaNumeros[i] = generarNumeros(numero1, numero2);
+        }
+        System.out.println("Impresión de los números: " + Arrays.toString(listaNumeros));
+    }
+    
+    public static int generarNumeros (int min, int max) {
+        return (int)(Math.random() * ((max - min) + 1)) + min;
     }
     
 }
